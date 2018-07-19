@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Count</title>
+</head>
+<body>
+    <h1>Count Page</h1>
+    <h2>There are {{ count }} words in your text</h2>
+
+    <!--creating link to the home page-->
+    <a href="{% url 'home' %}">Start over again</a>
+
+    <h2>Information capture from the home form textares</h2>
+
+    {{ fulltext }} <!--calling the dictionary-->
+
+    <h1>Individual word occurrence count</h1>
+    <!--word is the key and totalcount is the value-->
+    {% for word, totalcount  in  wordsorted %}
+
+        {{ word }} - {{ totalcount }} <br>
+
+    {% endfor %}
+
+</body>
+</html>
